@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="frameworks/jQuery_Mobile/css/jquery.mobile-1.4.1.min.css">
+    <script src="frameworks/jQuery_Mobile/js/jquery-1.10.2.min.js"></script>
+    <script src="frameworks/jQuery_Mobile/js/jquery.mobile-1.4.1.min.js"></script>
+</head>    
+
+<body>
+    
+    <!---------------HOME---------------->
+    <div data-role="page" id="pageHome">
+        <div data-role="header" data-position="fixed">
+            <h1>HOP</h1>
+            <a href="#panelCurrentUsers" class="ui-btn ui-icon-user ui-btn-icon-left">Users</a>
+        </div>
+        <div data-role="main" id="homeContent" class="ui-content">
+            <h2>Welcome to</h2>
+            <h1 id="clubName">Hyve</h1>
+            <h3>Share:</h3>
+            <div class="ui-grid-c ui-responsive ui-content">
+                <div class="ui-block-a">
+                    <button id="btnFacebook" class="ui-btn ui-corner-all ">Facebook</button> 
+                </div>
+                <div class="ui-block-a">
+                    <button id="btnTwitter"  class="ui-btn ui-corner-all ">Twitter</button> 
+                </div>
+                <div class="ui-block-a"></div>
+                
+                <div class="ui-block-a">
+                    <button id="btnLeaveBar" class="ui-btn  ui-corner-all">Leave Bar</button> 
+                </div>
+                <div class="ui-block-a">
+                <button id="btnSignOut"  class="ui-btn  ui-corner-all">Sign Out</button> 
+                </div>
+            </div>
+        </div>
+        
+        <div data-role="panel" id="panelCurrentUsers" data-theme="b" data-position="right" data-position-fixed="true" data-display="reveal">
+            <h2>Current Users..</h2>
+            <ul id="listCurrentUsers"/>
+        </div>
+    </div>
+
+    <!--------------SEARCH--------------->
+    <div data-role="page" id="pageSearch" class="ui-content">
+        <div data-role="header" data-position="fixed">
+            <a href="#" class="ui-btn ui-icon-bars ui-btn-icon-left ui-btn-icon-notext" aria-hidden="true">Navigation</a>
+            <h1>HOP</h1>
+            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-right">Search Bar</a>
+        </div>
+        <h1>SEARCH</h1>
+    </div>
+    
+    <!------------CHALLENGES------------>
+    <div data-role="page" id="pageChallenges" class="ui-content">
+        <div data-role="header" data-position="fixed">
+            <h1>HOP</h1>
+        </div>
+        <h1>CHALLENGES</h1>
+    </div>
+
+    
+    <!-------------PROFILE-------------->
+    <div data-role="page" id="pageProfile">
+        <div data-role="header" data-position="fixed">
+            <h1>HOP</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div style="text-align:center;">
+                <br>
+                <br>
+                <br>
+                <img src="/resources/sampleProfilePic.png" height="100" width="100">
+                <div class="ui-grid-solo ui-responsive">
+                    <h1 id="userFullName">Luke Beerwalker</h1>
+                </div>
+                <div class="ui-grid-solo ui-responsive">
+                    <h2 id="userTitle">"The Girlcrawler"</h2>
+                </div>
+                    <br><br><br>
+                    <h3>- insert more info here -</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/template" id="myFooterTemplateID" >
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#pageHome"       data-icon="home"   name="Home" id="btnHome">Home</a></li>
+                <li><a href="#pageSearch"     data-icon="search" name="Search" id="btnSearch">Search</a></li>
+                <li><a href="#pageChallenges" data-icon="star"   name="Challenges" id="btnChallenges">Challenges</a></li>
+                <li><a href="#pageProfile"    data-icon="user"   name="Profile" id="btnProfile">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</script>
+//<script src="js/index.js"></script>
+</html>
