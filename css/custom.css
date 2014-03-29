@@ -25,11 +25,10 @@ body, html {
 
 #homeContent {
     color: white;    
-
     background-image:url(/resources/1.jpg);
     background-size: cover;
     display:block; width:100%; height:100%;
-    position:fixed; !important
+    position:fixed !important;
 }
 
 #homeContent h2{
@@ -52,13 +51,13 @@ body, html {
 #btnLeaveBar {
     border: none;
     color: white;
-    background-color: #a5f700;
+    background-color: #4108ad;
 }
 
 #btnSignOut {
     border: none;
     color: white;
-    background-color: #FF8080;
+    background-color: #710000;
 }
 
 #clubName {
@@ -69,4 +68,186 @@ body, html {
 #pageHome {
 }
 
+.progress-bar input[type=number], .ui-slider-handle {
+    display: none !important;
+}  
 
+.progress-bar .ui-slider-track {
+    margin: 0px;
+    margin-top: -15px;
+    margin-left: -3px;    
+    height: 46px;
+    background-color: white !important;
+}
+
+.ui-slider-bg {
+    background-color: #05008e !important;
+}
+
+.progress-bar {
+    border-style: double;
+    border-width: 1px;
+    background-color: white;
+}
+
+.homeBtnCss {
+    color: white !important;
+    background-color: #FF3C32 !important;
+    border-color: transparent !important;
+    border-top-width: 5px  !important;
+}
+
+.searchBtnCss {
+    color: white !important;
+    background-color: #725EED !important;
+    border-color: transparent !important;
+    border-top-width: 5px  !important;
+}
+
+.challengesBtnCss {
+    color: white !important;
+    background-color: #1299E8 !important;
+    border-color: transparent !important;
+    border-top-width: 5px  !important;
+    
+}
+
+.profileBtnCss {
+    color: white !important;
+    background-color: #3EB941 !important;
+    border-color: transparent !important;
+    border-top-width: 5px  !important;
+}
+
+.selectedBtnCss {
+    border-top-color: #00032a  !important;
+}
+
+.footerCss {
+    border-width: 0px !important;
+    border-color: transparent !important;
+    margin-top: 0px !important;
+}
+
+.headerCss {
+    border-color: transparent !important;    
+    background-color:#FF9332 !important;
+    border-width: 0px !important;
+    text-shadow: none !important;
+}
+
+#experienceData {
+    margin-top: -32px;
+}
+
+a[data-icon="twitter"].ui-icon-twitter {
+    background-image: url("/resources/twitter_btn.png") !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+    border-width: 0px !important;
+    display: inline-block!important;
+    height: 55px;
+    width: 20px;
+}
+
+div[data-role="main"] {
+    background-color: #FFC382 !important;
+    color: #763a04;
+    text-shadow: none;
+}
+
+a[data-icon="fb"].ui-icon-fb {
+    background-image: url("/resources/fb_btn.png") !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+    border-width: 0px !important;
+    margin-right: 0px !important;
+    display: inline-block!important;
+    height: 55px;
+    width: 20px;
+}
+
+#outButtons {
+    position: fixed;
+    bottom: 90px;; 
+}
+
+.customBtnQc {
+    background-image: url("/resources/areas/qc_bg.jpg") !important;
+    background-size: cover!important;
+    height: 100px !important;
+}
+
+.customBtnBgc {
+    background-image: url("/resources/areas/bgc_bg.jpg") !important;
+    background-size: cover !important;
+    height: 100px !important;
+}
+
+.customBtnMalate {
+    background-image: url("/resources/areas/malate_bg.jpg") !important;
+    background-size: cover !important;
+    height: 100px !important;
+}
+
+.customBtnMakati {
+    background-image: url("/resources/areas/makati_bg.jpg") !important;
+    background-size: cover !important;
+    height: 100px !important;
+}
+
+.customBtnPasay {
+    background-image: url("/resources/areas/pasay_bg.jpg") !important;
+    background-size: cover !important;
+    height: 100px !important;
+}
+#searchTopText {
+    margin: 10px 10px;
+}
+
+#searchContent {  
+    display:block; 
+    width:100%; 
+    height:100%;
+}
+
+
+#dareContent {
+    display:block; 
+    width:100%; 
+    height:100%;
+    position: fixed !important;
+    text-align: center;
+}
+
+#profileContent {
+    text-align:center;
+    display:block; 
+    width:100%; 
+    height:100%;
+    
+}
+
+#barInfo {
+    background-color: white;
+    bottom: 100px;
+    position: fixed !important;
+    text-align: center;
+}
+
+div[data-role="popup"].div[data-role="header"] {
+    border-color: transparent !important;    
+    background-color:#FF9332 !important;
+    border-width: 0px !important;
+    text-shadow: none !important;
+}
+
+.readyToMingle{
+    background-color: #00cc27 !important;
+    color: white !important;
+}
+
+.notInTheMood{
+    background-color: #c00 !important;
+    color: white !important;
+}

@@ -7,35 +7,29 @@
     <link rel="stylesheet" href="frameworks/jQuery_Mobile/css/jquery.mobile-1.4.1.min.css">
     <script src="frameworks/jQuery_Mobile/js/jquery-1.10.2.min.js"></script>
     <script src="frameworks/jQuery_Mobile/js/jquery.mobile-1.4.1.min.js"></script>
+    <script src="frameworks/jQuery_Knob/js/jquery.knob.js"></script>
 </head>    
 
-<body>
-    
+<body>    
     <!---------------HOME---------------->
     <div data-role="page" id="pageHome">
-        <div data-role="header" data-position="fixed">
+        <div data-role="header" data-id="main-header" data-position="fixed" data-theme="b" class="headerCss" data-tap-toggle="false">
             <h1>HOP</h1>
-            <a href="#panelCurrentUsers" class="ui-btn ui-icon-user ui-btn-icon-left">Users</a>
+            <a href="#panelCurrentUsers" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-left ui-nodisc-icon ui-corner-all ui-mini">Users</a>
         </div>
         <div data-role="main" id="homeContent" class="ui-content">
             <h2>Welcome to</h2>
             <h1 id="clubName">Hyve</h1>
             <h3>Share:</h3>
-            <div class="ui-grid-c ui-responsive ui-content">
-                <div class="ui-block-a">
-                    <button id="btnFacebook" class="ui-btn ui-corner-all ">Facebook</button> 
+                    <div>
+                    <a class="ui-btn-inline ui-icon-twitter ui-nodisc-icon"  href="#" data-role="button" data-icon="twitter"></a>
+                  <a class="ui-btn-inline ui-icon-fb ui-nodisc-icon "      href="#" data-role="button" data-icon="fb"></a>
                 </div>
-                <div class="ui-block-a">
-                    <button id="btnTwitter"  class="ui-btn ui-corner-all ">Twitter</button> 
-                </div>
-                <div class="ui-block-a"></div>
-                
-                <div class="ui-block-a">
-                    <button id="btnLeaveBar" class="ui-btn  ui-corner-all">Leave Bar</button> 
-                </div>
-                <div class="ui-block-a">
-                <button id="btnSignOut"  class="ui-btn  ui-corner-all">Sign Out</button> 
-                </div>
+            
+            </br></br></br>
+            <div id="outButtons">
+                <button id="btnLeaveBar" class="ui-btn ui-btn-inline ui-corner-all">Leave Bar</button> 
+                <button id="btnSignOut"  class="ui-btn ui-btn-inline ui-corner-all">Sign Out</button> 
             </div>
         </div>
         
@@ -43,62 +37,196 @@
             <h2>Current Users..</h2>
             <ul id="listCurrentUsers"/>
         </div>
+        
+        <div data-role="footer" data-id="main-footer" data-position="fixed" data-theme="a" class="footerCss" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageHome"       data-icon="home"   data-transition="slide" data-direction=""  name="Home"        id="btnHome"       onClick="return changePageEvent('Home');" class="ui-nodisc-icon homeBtnCss selectedBtnCss">Home</a></li>
+                    <li><a href="#pageSearch"     data-icon="search" data-transition="slide" data-direction=""  name="Search"      id="btnSearch"     onClick="return changePageEvent('Search');" class="ui-nodisc-icon searchBtnCss">Search</a></li>
+                    <li><a href="#pageChallenges" data-icon="star"   data-transition="slide" data-direction=""  name="Challenges"  id="btnChallenges" onClick="return changePageEvent('Challenges');" class="ui-nodisc-icon challengesBtnCss">Dare</a></li>
+                    <li><a href="#pageProfile"    data-icon="user"   data-transition="slide" data-direction=""  name="Profile"     id="btnProfile"    onClick="return changePageEvent('Profile');" class="ui-nodisc-icon profileBtnCss">Profile</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!--------------SEARCH--------------->
-    <div data-role="page" id="pageSearch" class="ui-content">
-        <div data-role="header" data-position="fixed">
-            <a href="#" class="ui-btn ui-icon-bars ui-btn-icon-left ui-btn-icon-notext" aria-hidden="true">Navigation</a>
+    <!--AREA LIST-->
+    <div data-role="page" id="pageSearch" >
+        <div data-role="header" data-id="main-header" data-position="fixed" data-theme="b" class="headerCss" data-tap-toggle="false">
             <h1>HOP</h1>
-            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-right">Search Bar</a>
+            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-right ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right">Search Bar</a>
         </div>
-        <h1>SEARCH</h1>
+        
+        <div data-role="main" id="searchContent">
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <h4 id="searchTopText">Select a location:</h4>
+                </div>
+            </div>
+            <ul data-role="listview" id="listArea"/>
+        </div>
+        
+        <div data-role="footer" data-id="main-footer" data-position="fixed" data-theme="a" class="footerCss" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageHome"       data-icon="home"   data-transition="slide" data-direction="reverse"  name="Home"        id="btnHome"       onClick="return changePageEvent('Home');" class="ui-nodisc-icon homeBtnCss">Home</a></li>
+                    <li><a href="#pageSearch"     data-icon="search" data-transition="slide" data-direction=""         name="Search"      id="btnSearch"     onClick="return changePageEvent('Search');" class="ui-nodisc-icon searchBtnCss selectedBtnCss">Search</a></li>
+                    <li><a href="#pageChallenges" data-icon="star"   data-transition="slide" data-direction=""         name="Challenges"  id="btnChallenges" onClick="return changePageEvent('Challenges');" class="ui-nodisc-icon challengesBtnCss">Dare</a></li>
+                    <li><a href="#pageProfile"    data-icon="user"   data-transition="slide" data-direction=""         name="Profile"     id="btnProfile"    onClick="return changePageEvent('Profile');" class="ui-nodisc-icon profileBtnCss">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!--BAR LIST-->
+    <div data-role="page" id="pageBarList" >
+        <div data-role="header" data-id="main-header" data-position="fixed" data-theme="b" class="headerCss" data-tap-toggle="false">
+            <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-corner-all" data-direction="reverse" onClick="return changePageEvent('Search');" data-rel="back" >Back</a>
+            <h1>HOP</h1>
+            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-right ui-btn-icon-notext ui-nodisc-icon ui-corner-all">Search Bar</a>
+        </div>
+        
+        <div data-role="main" class="ui-content" id="areaContent">
+            <h1 id="areaName"></h1>
+            <ul data-role="listview" id="listBar"/>
+        </div>
+        
+        <div data-role="footer" data-id="main-footer" data-position="fixed" data-theme="a" class="footerCss" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageHome"       data-icon="home"   data-transition="slide" data-direction="reverse"  name="Home"        id="btnHome"       onClick="return changePageEvent('Home');" class="ui-nodisc-icon homeBtnCss">Home</a></li>
+                    <li><a href="#pageSearch"     data-icon="search" data-transition="slide" data-direction=""         name="Search"      id="btnSearch"     onClick="return changePageEvent('Search');" class="ui-nodisc-icon searchBtnCss selectedBtnCss">Search</a></li>
+                    <li><a href="#pageChallenges" data-icon="star"   data-transition="slide" data-direction=""         name="Challenges"  id="btnChallenges" onClick="return changePageEvent('Challenges');" class="ui-nodisc-icon challengesBtnCss">Dare</a></li>
+                    <li><a href="#pageProfile"    data-icon="user"   data-transition="slide" data-direction=""         name="Profile"     id="btnProfile"    onClick="return changePageEvent('Profile');" class="ui-nodisc-icon profileBtnCss">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!--BAR PROFILE-->
+    <div data-role="page" id="pageBarProfile" >
+        <div data-role="header" data-id="main-header" data-position="fixed" data-theme="b" class="headerCss" data-tap-toggle="false">
+            <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-corner-all" data-direction="reverse" onClick="return changePageEvent('BarList');" data-rel="back">Back</a>
+            <h1>HOP</h1>
+            <a href="#" class="ui-btn ui-icon-search ui-btn-icon-right ui-btn-icon-notext ui-nodisc-icon ui-corner-all">Search Bar</a>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <h1 id="barName"></h1>
+            <br><br><br>
+            <div id="barInfo">
+                <h3>- insert more info here -</h3>
+            </div>
+        </div>
+        
+        <div data-role="footer" data-id="main-footer" data-position="fixed" data-theme="a" class="footerCss" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageHome"       data-icon="home"   data-transition="slide" data-direction="reverse"  name="Home"        id="btnHome"       onClick="return changePageEvent('Home');" class="ui-nodisc-icon homeBtnCss">Home</a></li>
+                    <li><a href="#pageSearch"     data-icon="search" data-transition="slide" data-direction=""         name="Search"      id="btnSearch"     onClick="return changePageEvent('Search');" class="ui-nodisc-icon searchBtnCss selectedBtnCss">Search</a></li>
+                    <li><a href="#pageChallenges" data-icon="star"   data-transition="slide" data-direction=""         name="Challenges"  id="btnChallenges" onClick="return changePageEvent('Challenges');" class="ui-nodisc-icon challengesBtnCss">Dare</a></li>
+                    <li><a href="#pageProfile"    data-icon="user"   data-transition="slide" data-direction=""         name="Profile"     id="btnProfile"    onClick="return changePageEvent('Profile');" class="ui-nodisc-icon profileBtnCss">Profile</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     
     <!------------CHALLENGES------------>
-    <div data-role="page" id="pageChallenges" class="ui-content">
-        <div data-role="header" data-position="fixed">
+    <div data-role="page" id="pageChallenges">
+        <div data-role="header" data-id="main-header" data-position="fixed" data-theme="b" class="headerCss" data-tap-toggle="false">
             <h1>HOP</h1>
         </div>
-        <h1>CHALLENGES</h1>
+        
+        <div data-role="main" id="dareContent">
+            <h1>Challenge Time!</h1>
+            <h4>Are you ready?</h4>
+            <ul data-role="listview">
+                <li><a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="slidedown">Kiss a girl</a></li>
+                <li><a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="slidedown">Drink 3 shots of tequila straight</a></li>
+                <li><a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="slidedown">Tap this between 2:10am - 2:30am</a></li>
+            </ul>
+            
+            <div data-role="popup" id="myPopupDialog">
+                <div data-role="header">
+                    <h1>Your dare...</h1>
+                </div>
+
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <h2>[Challenge Title]</h2>
+                    <p>[Challenge Details]</p>
+                    
+                </div>
+
+                <div data-role="footer" style="text-align:center">
+                   <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-check ui-btn-icon-left" data-rel="back">Done!</a>
+                   <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-delete ui-btn-icon-left" data-rel="back">Back Out</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <div data-role="footer" data-id="main-footer" data-position="fixed" data-theme="a" class="footerCss" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageHome"       data-icon="home"   data-transition="slide" data-direction="reverse"  name="Home"        id="btnHome"       onClick="return changePageEvent('Home');" class="ui-nodisc-icon homeBtnCss">Home</a></li>
+                    <li><a href="#pageSearch"     data-icon="search" data-transition="slide" data-direction="reverse"  name="Search"      id="btnSearch"     onClick="return changePageEvent('Search');" class="ui-nodisc-icon searchBtnCss">Search</a></li>
+                    <li><a href="#pageChallenges" data-icon="star"   data-transition="slide" data-direction=""         name="Challenges"  id="btnChallenges" onClick="return changePageEvent('Challenges');" class="ui-nodisc-icon challengesBtnCss selectedBtnCss">Dare</a></li>
+                    <li><a href="#pageProfile"    data-icon="user"   data-transition="slide" data-direction=""         name="Profile"     id="btnProfile"    onClick="return changePageEvent('Profile');" class="ui-nodisc-icon profileBtnCss">Profile</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     
     <!-------------PROFILE-------------->
     <div data-role="page" id="pageProfile">
-        <div data-role="header" data-position="fixed">
+        <div data-role="header" data-id="main-header" data-position="fixed" data-theme="b" class="headerCss" data-tap-toggle="false">
             <h1>HOP</h1>
         </div>
-        <div data-role="main" class="ui-content">
-            <div style="text-align:center;">
-                <br>
+        
+        <div data-role="main" id="profileContent">
+            
                 <br>
                 <br>
                 <img src="/resources/sampleProfilePic.png" height="100" width="100">
                 <div class="ui-grid-solo ui-responsive">
-                    <h1 id="userFullName">Luke Beerwalker</h1>
+                    <h1 id="userFullName">[insert name here]</h1>
                 </div>
                 <div class="ui-grid-solo ui-responsive">
-                    <h2 id="userTitle">"The Girlcrawler"</h2>
+                    <h2 id="userTitle">[insert title here]</h2>
+                
+<!--
+                <div style="display:inline;width:100px;height:100px;">
+                    <canvas width="100px" height="100px">
+                    <input class="dial" data-width="100" data-displayinput="false" value="35" style="display: none; width: 0px; visibility: hidden;">
+                </div>
+-->
+                    <div class="progress-bar ui-corner-all">
+                        <input type="range" id="progress-bar" value="50" min="0" max="100" data-highlight="true" data-mini="false" disabled>
+                    </div>
+                    <h4 id="experienceData"></h4>
                 </div>
                     <br><br><br>
+                    <h3>Change Status:</h3>
+                    <a href="#" id="btnToggleStatus" onClick="return toggleStatus();" ></a>
                     <h3>- insert more info here -</h3>
+                    
+        </div>
+        
+        <div data-role="footer" data-id="main-footer" data-position="fixed" data-theme="a" class="footerCss" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageHome"       data-icon="home"   data-transition="slide" data-direction="reverse"  name="Home"        id="btnHome"       onClick="return changePageEvent('Home');" class="ui-nodisc-icon homeBtnCss">Home</a></li>
+                    <li><a href="#pageSearch"     data-icon="search" data-transition="slide" data-direction="reverse"  name="Search"      id="btnSearch"     onClick="return changePageEvent('Search');" class="ui-nodisc-icon searchBtnCss">Search</a></li>
+                    <li><a href="#pageChallenges" data-icon="star"   data-transition="slide" data-direction="reverse"  name="Challenges"  id="btnChallenges" onClick="return changePageEvent('Challenges');" class="ui-nodisc-icon challengesBtnCss">Dare</a></li>
+                    <li><a href="#pageProfile"    data-icon="user"   data-transition="slide" data-direction=""         name="Profile"     id="btnProfile"    onClick="return changePageEvent('Profile');" class="ui-nodisc-icon profileBtnCss selectedBtnCss">Profile</a></li>
+                </ul>
             </div>
         </div>
     </div>
 </body>
 
-<script type="text/template" id="myFooterTemplateID" >
-    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#pageHome"       data-icon="home"   name="Home" id="btnHome">Home</a></li>
-                <li><a href="#pageSearch"     data-icon="search" name="Search" id="btnSearch">Search</a></li>
-                <li><a href="#pageChallenges" data-icon="star"   name="Challenges" id="btnChallenges">Challenges</a></li>
-                <li><a href="#pageProfile"    data-icon="user"   name="Profile" id="btnProfile">Profile</a></li>
-            </ul>
-        </div>
-    </div>
-</script>
 //<script src="js/index.js"></script>
 </html>
